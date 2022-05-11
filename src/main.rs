@@ -4,9 +4,18 @@ fn main() {
 
 fn target_method(arg: i32) -> String {
 
-    if arg == 3 {
+    if arg % 15 == 0 {
+        return "FizzBuzz".to_string();
+    }
+
+    if arg % 3 == 0 {
         return "Fizz".to_string();
     }
+
+    if arg % 5 == 0 {
+        return "Buzz".to_string();
+    }
+
     return arg.to_string();
 }
 
@@ -34,5 +43,25 @@ mod tests {
     #[test]
     fn _3のときは_fizzを取得する() {
         assert_eq!(target_method(3), "Fizz");
+    }
+
+    #[test]
+    fn _5のときは_buzzを取得する() {
+        assert_eq!(target_method(5), "Buzz");
+    }
+
+    #[test]
+    fn _6のときは_fizzを取得する() {
+        assert_eq!(target_method(6), "Fizz");
+    }
+
+    #[test]
+    fn _10のときは_buzzを取得する() {
+        assert_eq!(target_method(10), "Buzz");
+    }
+
+    #[test]
+    fn _15のときは_fizzbuzzを取得する() {
+        assert_eq!(target_method(15), "FizzBuzz");
     }
 }
