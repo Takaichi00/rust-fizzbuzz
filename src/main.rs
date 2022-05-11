@@ -3,6 +3,10 @@ fn main() {
 }
 
 fn target_method(arg: i32) -> String {
+
+    if arg == 3 {
+        return "Fizz".to_string();
+    }
     return arg.to_string();
 }
 
@@ -20,5 +24,15 @@ mod tests {
     #[test]
     fn _1のときは1を取得する() {
         assert_eq!(target_method(1), "1");
+    }
+
+    #[test]
+    fn _2のときは2を取得する() {
+        assert_eq!(target_method(2), "2");
+    }
+
+    #[test]
+    fn _3のときは_fizzを取得する() {
+        assert_eq!(target_method(3), "Fizz");
     }
 }
