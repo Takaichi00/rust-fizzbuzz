@@ -5,15 +5,15 @@ fn main() {
 fn target_method(arg: i32) -> String {
 
     if arg % 15 == 0 {
-        return "FizzBuzz".to_string();
+        return String::from("FizzBuzz");
     }
 
     if arg % 3 == 0 {
-        return "Fizz".to_string();
+        return String::from("Fizz");
     }
 
     if arg % 5 == 0 {
-        return "Buzz".to_string();
+        return String::from("Buzz");
     }
 
     return arg.to_string();
